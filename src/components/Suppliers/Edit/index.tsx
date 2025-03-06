@@ -44,17 +44,17 @@ const SupplierEdit: React.FC = () => {
     if (isLoading || !supplier?.id) return;
     form.validateFields().then(values => {
       setIsLoading(true);
-
-      const dataToUpdate = {
+  
+      const dataToUpdate: ISupplierCreate = {
         name: values.name,
-        document: values.document,
+        document: values.document, // <-- Aqui, garantimos que o `document` está incluído
         os_key: values.os_key,
         email: values.email,
         phone: values.phone,
         observation: values.observation,
         is_active: values.is_active,
       };
-
+  
       supplierService
         .update(supplier.id, dataToUpdate)
         .then(() => {
@@ -71,6 +71,7 @@ const SupplierEdit: React.FC = () => {
         .finally(() => setIsLoading(false));
     });
   }, [form, isLoading, supplier]);
+  
 
   return (
     <div className="w-7xl container mx-auto">

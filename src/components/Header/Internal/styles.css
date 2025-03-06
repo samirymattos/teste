@@ -1,0 +1,66 @@
+.aniversariantes-container {
+  top: -10px;
+}
+
+.ant-menu-overflow {
+  position: relative !important;
+  top: -10px;
+  background-color: transparent;
+  border: none;
+}
+
+.ant-menu-dark {
+  padding: 0;
+}
+
+.ant-menu-submenu-horizontal {
+  height: 30px !important; 
+  line-height: 36px !important; 
+}
+
+.companySelected {
+  padding: 10px;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: 0.3s;
+}
+
+.companySelected:hover {
+  background-color: #1d1e26;
+  border-bottom-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+}
+.ant-dropdown-open{
+  background-color: theme('colors.darkBg') !important;
+}
+.ant-dropdown-open:hover {
+  background-color: theme('colors.darkSelecao') !important;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.ant-dropdown-trigger {
+  & .img-logo {
+    width: 60px !important;
+  }
+}
+
+.ant-dropdown-menu {
+  background-color: theme('colors.darkModal') !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  padding: 0 !important;
+}
+
+
+.ant-dropdown-menu-item {
+  background-color: theme('colors.darkBg') !important;
+  padding: 15px !important;
+}
+
+.ant-dropdown-menu-item:hover {
+  background-color: theme('colors.darkSelecao') !important;
+}

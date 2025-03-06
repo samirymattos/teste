@@ -1,0 +1,5 @@
+.sending-instructions {
+  & .bg-container {
+    background-color: #fbfbfb;
+  }
+}

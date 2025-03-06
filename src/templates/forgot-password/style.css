@@ -1,0 +1,9 @@
+.forgot-password {
+  & .bg-container {
+    background-color: #fbfbfb;
+  }
+
+  & .bg-input-password {
+    background-color: #dddddd;
+  }
+}

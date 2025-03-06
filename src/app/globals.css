@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  width: 100%;
+  max-width: none;
+  padding-left: 80px;
+  padding-right: 80px;
+  height: calc(100vh - 101px);
+
+}
+
+.container-conteudo {
+  background-color: theme("colors.darkModal");
+  border-radius: theme("borderRadius.3xl");
+  padding: 25px 50px;
+}
+
+.container-conteudo::-webkit-scrollbar {
+  width: 12px;
+}
+
+.container-conteudo::-webkit-scrollbar-thumb {
+  background-color: theme('colors.transparent'); 
+  border-radius: 6px;
+  
+}
+
+.container-conteudo {
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.darkBg') theme('colors.transparent'); 
+  
+}
+
+.container-conteudo-small {
+  background-color: theme("colors.darkModal");
+  border-radius: theme("borderRadius.xl");
+  padding: 25px 50px;
+}
+
+.ant-btn-primary {
+  box-shadow: none !important;
+}
+
+.ant-table-content table {
+  border-spacing: 10px 3px;
+
+  & .ant-table-thead {
+    & .ant-table-cell {
+      height: 25px;
+      background-color: theme("colors.darkModal");
+    }
+  }
+
+  & .ant-table-tbody {
+    cursor: pointer;
+
+    & .ant-table-cell {
+      background: theme("colors.darkBg") !important;
+      border-radius: 10px;
+      height: 50px;
+    }
+
+    & > tr:hover {
+      & .ant-table-cell {
+        background: theme("colors.darkSelecao") !important;
+      }
+    }
+  }
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  position: relative;
+}
+
+::-webkit-scrollbar-track {
+  background: theme("colors.darkBg");
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

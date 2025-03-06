@@ -1,0 +1,7 @@
+.recovery {
+  height: calc(100vh - 64px);
+
+  & .bg-input-login {
+    background-color: #dddddd;
+  }
+}

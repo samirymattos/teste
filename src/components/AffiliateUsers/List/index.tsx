@@ -32,7 +32,6 @@ const AffiliateList: React.FC = () => {
         [page, debouncedFilter]
       )
     );
-
   return (
     <div className="w-7xl container mx-auto">
       <PageTitle

@@ -29,14 +29,13 @@ const CoursesList: React.FC = () => {
         [page, debouncedFilter]
       )
     );
-
   return (
     <div className="w-7xl container mx-auto">
       <PageTitle
         navTitle="Sistema >"
         title="Cursos"
         action={
-          <Link href="/dashboard/cursos/cadastrar">
+          <Link href="/dashboard/configuracoes/cursos/cadastrar">
             <Button type="primary">Adicionar Curso</Button>
           </Link>
         }

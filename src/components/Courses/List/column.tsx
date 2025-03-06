@@ -70,7 +70,7 @@ export const CourseColumns: CourseColumnsProps = courseRefresh => {
       render: (_, record: ICourse) => (
         <div className="flex justify-around" onClick={e => e.stopPropagation()}>
           <Tooltip title="Editar">
-            <Link href={`/dashboard/cursos/${record.id}/editar`}>
+            <Link href={`/dashboard/configuracoes/cursos/${record.id}/editar`}>
               <CiEdit size={20} />
             </Link>
           </Tooltip>

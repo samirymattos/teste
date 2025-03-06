@@ -10,7 +10,7 @@ const getById = async (id: string) =>
 const update = async (id: string, data: Partial<ICourse>) =>
   apiService.put(`/courses/${id}`, data);
 
-const remove = async (id: string) =>
+const remove = async (id: string) => 
   apiService.delete(`/courses/${id}`);
 
 const create = async (data: Partial<ICourse>) =>

@@ -94,6 +94,11 @@ const InternalHeader: React.FC = () => {
             label: "Cursos",
           },
           
+          {
+            key: "/dashboard/configuracoes/fornecedores",
+            label: "Fornecedores",
+          },
+          
           
         ],
       },

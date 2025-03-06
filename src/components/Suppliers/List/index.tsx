@@ -3,23 +3,23 @@
 
 import PageTitle from "@/components/PageTitle";
 import { Constants } from "@/constants";
-import { useCourses } from "@/hooks/useCourses";
+import { useSuppliers } from "@/hooks/useSuppliers";
 import { Button, Input, Table } from "antd";
 import React, { useMemo, useState } from "react";
-import { CourseColumns } from "./column";
+import { SupplierColumns } from "./column";
 import Link from "next/link";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useRouter } from "next/navigation";
 
-const CoursesList: React.FC = () => {
+const SuppliersList: React.FC = () => {
   const router = useRouter();
   const [page, setPage] = useState<number>(1);
   const [filters, setFilters] = useState<object>({});
 
   const debouncedFilter = useDebounce(filters, 2000);
 
-  const { courses, coursesLoading, coursesTotal, coursesRefresh } =
-    useCourses(
+  const { suppliers, suppliersLoading, suppliersTotal, suppliersRefresh } =
+    useSuppliers(
       useMemo(
         () => ({
           page,
@@ -29,14 +29,15 @@ const CoursesList: React.FC = () => {
         [page, debouncedFilter]
       )
     );
+
   return (
     <div className="w-7xl container mx-auto">
       <PageTitle
         navTitle="Sistema >"
-        title="Cursos"
+        title="Fornecedores"
         action={
-          <Link href="/dashboard/configuracoes/cursos/cadastrar">
-            <Button type="primary">Adicionar Curso</Button>
+          <Link href="/dashboard/configuracoes/fornecedores/cadastrar">
+            <Button type="primary">Adicionar Fornecedor</Button>
           </Link>
         }
       />
@@ -49,21 +50,21 @@ const CoursesList: React.FC = () => {
         />
         <Table
           rowKey="id"
-          columns={CourseColumns(coursesRefresh)}
-          dataSource={courses}
-          loading={coursesLoading}
+          columns={SupplierColumns(suppliersRefresh)}
+          dataSource={suppliers}
+          loading={suppliersLoading}
           scroll={{ x: "max-content" }}
           onRow={record => {
             return {
               onClick: () => {
-                router.push(`/dashboard/cursos/${record.id}/editar`);
+                router.push(`/dashboard/fornecedores/${record.id}/editar`);
               },
             };
           }}
           pagination={{
             current: page,
             pageSize: Constants.per_page,
-            total: coursesTotal,
+            total: suppliersTotal,
             onChange: page => setPage(page),
           }}
         />
@@ -72,4 +73,4 @@ const CoursesList: React.FC = () => {
   );
 };
 
-export default React.memo(CoursesList);
+export default React.memo(SuppliersList);

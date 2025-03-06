@@ -89,6 +89,11 @@ const InternalHeader: React.FC = () => {
             label: "Captadores",
           },
           
+          {
+            key: "/dashboard/configuracoes/cursos",
+            label: "Cursos",
+          },
+          
           
         ],
       },
